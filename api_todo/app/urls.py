@@ -1,7 +1,7 @@
-from app.views import todo_list, todo_detail_change_and_delete
+from app.views import TodoListAndCreate, TodoDetailChangeDelete
 from django.urls import path
 
 urlpatterns = [
-    path('', todo_list),
-    path('<int:pk>/', todo_detail_change_and_delete),
+    path('', TodoListAndCreate.as_view()),
+    path('<int:pk>/', TodoDetailChangeDelete.as_view()),
 ]
